@@ -274,10 +274,7 @@ module.exports = {
     ***************************************************************************/
     onlyAllowOrigins: [
       'https://bodensee-helden.onrender.com',
-    //   'https://example.com',
-    //   'https://staging.example.com',
      ],
-
 
     /***************************************************************************
     *                                                                          *
