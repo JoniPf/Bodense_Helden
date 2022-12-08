@@ -1,0 +1,40 @@
+<div class="container">
+    <h1>Boote</h1>
+
+    <form action="/boat">
+        <label>Suche</label>
+        <input type="text" value="" length="20" name="q">
+        <button class="blue-button" type="submit">Suche</button>
+        <button class="blue-button" type="submit">alle</button>
+    </form>
+
+    <div class="item-content">
+        <table class="table">
+            <thead>
+                <th>Name</th>
+                <th>Preis</th>
+                <th>Zustand</th>
+            </thead>
+            <tbody>
+                <% boat.forEach(function(boat){ %>
+                    <tr>
+                        <td>
+                            <%= boat.name %>
+                        </td>
+                        <td>
+                            <%= boat.price %>
+                        </td>
+                        <td>
+                            <%= boat.condition %>
+                        </td> 
+                        <td> <a class="blue-button" href="/boat/<%= boat.id %>">anzeigen</a></td>
+                        <td> <a class="blue-button" href="/boat/<%= boat.id %>/delete">löschen</a></td>
+                        <td> <a class="blue-button" href="/boat/<%= boat.id %>/edit">edit</a></td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+        <a class="blue-button" href="/boat/new">Hinzufügen</a>
+    </div>
+</div>
+</div>

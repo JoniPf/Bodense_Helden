@@ -1,0 +1,24 @@
+<div class="container">
+    <form action="/boat/<%= boat.id%>/update" method="post">
+        <div>
+            <div class="form-group">
+                <label class="col-form-label-lg">Name</label>
+                <input type="text" class="form-control" value="<%= boat.name %>" maxlength="80" name="name">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label-lg">Preis</label>
+                <input type="text" class="form-control" value="<%= boat.price %>" maxlength="8" name="price">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label-lg">Beschreibung</label>
+                <input type="text" maxlength="255" value="<%= boat.description %>" class="form-control" size="40" name="description">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label-lg">Zustand</label>
+                <input type="text" class="form-control" value="<%= boat.condition %>" maxlength="10" name="condition">
+            </div>
+        </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Aktualisieren</button>
+    </form>
+</div>

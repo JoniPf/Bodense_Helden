@@ -63,4 +63,15 @@ module.exports.routes = {
   'POST  /api/v1/deliver-contact-form-message':          { action: 'deliver-contact-form-message' },
   'POST  /api/v1/observe-my-session':                 { action: 'observe-my-session', hasSocketFeatures: true },
 
+
+  'GET /boote': { view: 'pages/boote' }, 
+
+  'GET /boat/new': { view: 'pages/boat/new' },
+  'POST /boat': { controller: 'BoatController', action:'create' },
+  'GET /boat': 'BoatController.find',
+  'GET /boat/:id': 'boat.findOne',
+  
+  'GET /boat/:id/delete': 'boat.destroy',
+  'GET /boat/:id/edit': 'boat.edit',
+  'POST /boat/:id/update': 'boat.update'
 };

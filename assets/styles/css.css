@@ -1,0 +1,133 @@
+/*Button style*/
+.blue-button {
+  border-width: 3px;
+  border-style: solid;
+  border-color: #1d90a7;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  color: #fbf9f2;
+  background-color: #1d90a7;
+}
+
+/*Style fuer <a>*/
+a:link {
+    color: #fbf9f2;
+    text-decoration: none;
+    background-color: #1d90a7;
+  }
+  
+  a:visited {
+    color: #fbf9f2;
+    text-decoration: none;
+    background-color: #1d90a7;
+  }
+  
+  a:hover {
+    color: #fbf9f2;
+    text-decoration: none;
+    background-color: #1d90a7;
+  }
+  
+  a:active {
+    color: #fbf9f2;
+    text-decoration: none;
+    background-color: #1d90a7;
+  }
+  
+  /* Style home buton*/
+  .btn {
+    background-color: #1d90a7; /* Blue background */
+    border: none; /* Remove borders */
+    color: #fbf9f2; /* White text */
+    font-size: 20px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+  }
+  
+  /* Navbar icon set custom color*/
+  /* Set the border color */
+  .custom-toggler.navbar-toggler {
+    border-color: #fbf9f2;
+  }
+
+  /* Setting the stroke to green using rgb values (0, 128, 0) */         
+  .custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(251, 249, 242, 1.0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+  .footer{
+    margin-bottom: 0; 
+    margin-top:25px; 
+    background-color:#1d90a7; 
+    color: #fbf9f2;
+  }
+
+  /*colomns*/
+  .leercolomn{
+    background-color:white; 
+    margin-top: 10px; 
+  }
+  .blauecolomn{
+    background-color:#1d90a7;
+    color: #fbf9f2;
+    min-height: 250px;
+    margin-top: 10px;
+  }
+
+  /*Link jetzt mieten*/
+  .bootartenlink{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    text-decoration: underline;
+  }
+
+  /*margins*/
+  .margintop{
+    margin-top: 25px;
+  }
+  .margintop10{
+    margin-top: 10px;
+  }
+  .marginfooterelement{
+    margin-bottom: 20; 
+    margin-top:20px;
+  }
+
+  /*Text Block Farbe*/
+  .textblock{ 
+    background-color: #1d90a7; 
+    color: #fbf9f2;
+  }
+  
+  /*Navigatios Farben*/
+  .navbarexpandcustomstyle{
+    background-color: #1d90a7; 
+    color: #fbf9f2;
+  }
+
+  /*Navigationslinks*/
+  .headera:link {
+    color: #fbf9f2;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  .headera:visited {
+    color: #fbf9f2;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  .headera:hover {
+    color: #fbf9f2;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  .headera:active {
+    color: #fbf9f2;
+    background-color: transparent;
+    text-decoration: none;
+  }
