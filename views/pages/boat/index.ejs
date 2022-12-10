@@ -14,6 +14,7 @@
                 <th>Name</th>
                 <th>Preis</th>
                 <th>Zustand</th>
+                <th>Kategorie</th>
             </thead>
             <tbody>
                 <% boat.forEach(function(boat){ %>
@@ -27,6 +28,9 @@
                         <td>
                             <%= boat.condition %>
                         </td> 
+                        <td>
+                            <%= boat.category.name %>
+                        </td>
                         <td> <a class="blue-button" href="/boat/<%= boat.id %>">anzeigen</a></td>
                         <td> <a class="blue-button" href="/boat/<%= boat.id %>/delete">löschen</a></td>
                         <td> <a class="blue-button" href="/boat/<%= boat.id %>/edit">edit</a></td>
@@ -35,6 +39,7 @@
             </tbody>
         </table>
         <a class="blue-button" href="/boat/new">Hinzufügen</a>
+        <a class="blue-button mt-4" href="/welcome">Zurück</a>
     </div>
 </div>
 </div>

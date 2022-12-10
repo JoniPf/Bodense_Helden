@@ -64,7 +64,9 @@ module.exports.routes = {
   'POST  /api/v1/observe-my-session':                 { action: 'observe-my-session', hasSocketFeatures: true },
 
 
-  'GET /boote': { view: 'pages/boote' }, 
+
+  'GET /boote': { controller: 'BooteController', action: 'boote'},
+
 
   'GET /boat/new': { view: 'pages/boat/new' },
   'POST /boat': { controller: 'BoatController', action:'create' },
@@ -73,5 +75,11 @@ module.exports.routes = {
   
   'GET /boat/:id/delete': 'boat.destroy',
   'GET /boat/:id/edit': 'boat.edit',
-  'POST /boat/:id/update': 'boat.update'
+  'POST /boat/:id/update': 'boat.update',
+
+  'GET /category/new': { controller: 'CategoryController', action:'new' },
+  'POST /category': { controller: 'CategoryController', action:'create' },
+  'GET /category/:id/destroy': { controller: 'CategoryController', action: 'destroyOne' },
+  'GET /category': { controller: 'CategoryController', action: 'find' },
+
 };

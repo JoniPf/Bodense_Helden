@@ -19,6 +19,15 @@
                 <input type="text" class="form-control" maxlength="20" name="condition">
             </div>
         </div>
+        <div class="form-group">
+            <label class="col-form-label-lg">Kategorie</label>
+             <select class="form-select" name="category">
+            <% categories.forEach(function(category){ %>
+                <option value="<%= category.id %>"><%= category.name %></option>
+            <% }); %>
+            </select>
+        </div>
         <button type="submit" class="blue-button mt-4">Hinzufügen</button>
+        <a class="blue-button mt-4" href="/welcome">Zurück</a>
     </form>
 </div>

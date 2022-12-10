@@ -22,4 +22,11 @@ module.exports.policies = {
   'legal/view-privacy': true,
   'deliver-contact-form-message': true,
 
+  BoatController: {
+    '*': 'is-super-admin',
+  },
+  CategoryController: {
+    '*': 'is-super-admin',
+  }
+
 };

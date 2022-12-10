@@ -1,21 +1,29 @@
-<div class="container">
-    <h2 class="mt-4">Willkommen in der Bootsübersicht</h2>
-    <div class="card w-100 mt-4">
-        <h4 class="card-header">
-            Boote verwalten
-        </h4>
-        <div class="card-body text-center container">
-            <div class="row mt-4">
-                <div class="mb-4 col-sm">
-                    <a class="blue-button" href="/boat/">Boote anzeigen</a>
-                </div>
-                <div class="mb-4 col-sm">
-                    <a class="blue-button" href="/boat/new">Boote hinzufügen</a>
-                </div>
-                <div class="mb-4 col-sm">
-                    <a class="blue-button" href="/">zurück</a>
-                </div>
-            </div>
-        </div>
-    </div>
+<h1>Boote</h1>
+
+<div>
+    <table class="table">
+        <tbody>
+            <% categories.forEach(function(category){ %>
+                <tr>
+                    <td colspan="3" class="h4">
+                        <%= category.name %> <BR>
+                    </td>
+                </tr>
+                <% if (category.boats) { %>
+                <% category.boats.forEach(function(boote){ %>
+                    <tr>
+                        <td class="h6">
+                            <%= boote.name %> <BR>
+                            <span class="h7"><%= boote.description %></span>
+                        </td>
+                        <td class="h6">
+                            <%= boote.price %> &euro;
+                        </td>
+                    </tr>
+                    <% }); %>
+                    <% } %>
+                <% }); %>
+        </tbody>
+    </table>
+</div>
 </div>
