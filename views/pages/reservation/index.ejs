@@ -1,0 +1,39 @@
+<div class="container">
+    <h1>Boote</h1>
+
+    <form action="/meal">
+        <label>Suche</label>
+        <input type="text" value="" length="20" name="q">
+        <button class="green-button" type="submit">Suche</button>
+    </form>
+
+    <div class="item-content">
+        <table class="table">
+            <thead>
+                <th>Bestellnr</th>
+                <th>Datum</th>
+                <th>Bestellung</th>
+            </thead>
+            <tbody>
+                <% orders.forEach(function(order){ %>
+                    <tr>
+                        <td>
+                            <%= order.id %>
+                        </td>
+                        <td>
+                            <%= order.time %>
+                        </td>
+                        <td>
+                            <% order.boats.forEach(function(boat){ %>
+                                <%= boat.name %><BR>
+                            <% }); %>
+
+                        </td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+        <a class="blue-button" href="/boat/new">Hinzufügen</a>
+    </div>
+</div>
+</div>

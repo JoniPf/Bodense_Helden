@@ -1,0 +1,12 @@
+<div class="container">
+    <h1>Boote Bestellen</h1>
+        <form action="/reservation/step2" method="POST">
+            <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+            <div class="form-group">
+                <label>Lieferzeitpunkt</label>
+                <input type="datetime" class="form-control" name="zeit">
+            </div>
+            <a class="btn btn-secondary mb-4" href="/boote">Zurück</a>
+            <button class="btn btn-primary mb-4" type="submit">Weiter</button>
+        </form>
+</div>

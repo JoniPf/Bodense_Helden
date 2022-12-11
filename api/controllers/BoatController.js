@@ -1,5 +1,5 @@
 /**
- * MealController
+ * BoatController
  *
  * @description :: Server-side actions for handling incoming requests.
  * @help        :: See https://sailsjs.com/docs/concepts/actions
@@ -8,11 +8,16 @@
 const Sails = require("sails/lib/app/Sails");
 
 module.exports = {
+  new: async function (req, res) {
+    let categories = await Category.find();
+    res.view('pages/boat/new', { categories });
+  },
+
   create: async function (req, res) {
     sails.log.debug("Create boat....")
     let params = req.allParams();
     await Boat.create(params);
-    res.redirect('/')
+    res.view('pages/boat/status', { boatname: req.param("name")})
   },
 
   find: async function (req, res) {
@@ -25,21 +30,11 @@ module.exports = {
         }
       })
     } else {
-      boat = await Boat.find();
-      
+      boat = await Boat.find().populate("category");
     }
     
     res.view ('pages/boat/index', { boat: boat } );
   },
-    
-  /*
-    findall: async function (req, res) {
-    sails.log.debug("List all boats....")
-    let boat = await Boat.find();
-    res.view ('pages/boat/index', { boat: boat } );
-  },
-  */
-  
 
   findOne: async function (req, res) {
     sails.log.debug("List single boat....")

@@ -15,15 +15,9 @@ module.exports = {
   },
 
   create: async function (req, res) {
-    sails.log.debug("Create new category....")
-    Category.create(req.allParams()).then(() => {
-      res.redirect('/category');
-    }).catch(
-      (err) => {
-        sails.log.debug("Error: " + err.message)
-        res.view('pages/category/new', { "message": err.message, "name": req.body.name})
-      }
-    );
+    sails.log.debug("Create new boat....")
+    let category = await Category.create(req.allParams());
+    res.redirect('/category');
   },
 
   find: async function (req, res) {

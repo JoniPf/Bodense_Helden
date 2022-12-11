@@ -1,0 +1,30 @@
+<div class="container">
+    <h2 class="mt-4">Ihr Einkauswagen</h2>
+
+    <% if(req.session.basket && req.session.basket.length> 0){ %>
+        <table class="table mt-4">
+            <% req.session.basket.forEach(function(boat,index){ %>
+                <tr>
+                    <td class="Boat-title">
+                        <%= boat.name %> <BR>
+                    </td>
+                    <td class="Boat-price">
+                        <%= boat.price %> &euro;
+                    </td>
+                    <td class="Boat-price">
+                        <a class="badge badge-primary" href="/shoppingbasket/remove/<%= index %>">entfernen</a>
+                    </td>
+                </tr>
+            <% }) %>
+        </table>
+        <div class="mb-4">
+            <a class="btn btn-primary" href="/boote">Weitere Boote reservieren</a></li>
+            <a class="btn btn-primary" href="/reservation/step1">Bestellung abschliessen</a></li>
+        </div>
+    <% } else{ %>
+        <p>Der Warenkorb ist leer.</p>
+        <div class="mb-4">
+            <a class="btn btn-primary" href="/boote">Zur Speisekarte</a></li>
+        </div>
+    <% } %>
+</div>

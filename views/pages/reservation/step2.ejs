@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>Zusammenfassung der Bestellung</h1>
+
+    <div class="mb-4">
+        <div class="h5">
+            Uhrzeit:
+            <%= reservation.time %>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item active">Boote</li>
+            <% basket.forEach(function(boat){ %>
+                <li class="list-group-item">
+                    <%= boat.name %>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+
+    <a class="btn btn-secondary mb-4" href="/reservation/step1">Zurück</a>
+    <a class="btn btn-primary mb-4" href="/reservation/commit">Kostenpflichtig bestellen</a>
+
+</div>

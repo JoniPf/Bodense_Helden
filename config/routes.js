@@ -68,7 +68,7 @@ module.exports.routes = {
   'GET /boote': { controller: 'BooteController', action: 'boote'},
 
 
-  'GET /boat/new': { view: 'pages/boat/new' },
+  'GET /boat/new': { controller: 'BoatController', action:'new' },
   'POST /boat': { controller: 'BoatController', action:'create' },
   'GET /boat': 'BoatController.find',
   'GET /boat/:id': 'boat.findOne',
@@ -81,5 +81,18 @@ module.exports.routes = {
   'POST /category': { controller: 'CategoryController', action:'create' },
   'GET /category/:id/destroy': { controller: 'CategoryController', action: 'destroyOne' },
   'GET /category': { controller: 'CategoryController', action: 'find' },
+
+  'GET /shoppingbasket': 'ShoppingBasketController.show',
+  'GET /shoppingbasket/put/:boatid': 'ShoppingBasketController.put',
+  'GET /shoppingbasket/remove/:boatid': 'ShoppingBasketController.remove',
+  
+  'GET /reservation/boote': 'ReservationController.boote',
+  'GET /reservation/step1': 'ReservationController.step1',
+  'POST /reservation/step2': 'ReservationController.step2',
+  'GET /reservation/commit': 'ReservationController.commit',
+  //'GET /reservation/confirmation/:id': 'ReservationController.confirmation',
+  'GET /reservation/confirmation': 'ReservationController.confirmation',
+  'GET /reservation': 'ReservationController.find',
+  
 
 };

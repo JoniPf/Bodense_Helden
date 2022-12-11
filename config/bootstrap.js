@@ -71,6 +71,11 @@ module.exports.bootstrap = async function() {
     { name: 'Ruderboot'},
   ]);
 
+await Boat.createEach([
+    { name: 'Grosser Adler', description: 'Schön grosses Segel', price: 56, condition:'Sehr gut', categoy: 'Segelboot' },
+  ]);
+
+
   // Save new bootstrap version
   await sails.helpers.fs.writeJson.with({
     destination: bootstrapLastRunInfoPath,

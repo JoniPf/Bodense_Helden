@@ -1,0 +1,36 @@
+<div class="container">
+    <h1>Boote</h1>
+
+    <div>
+        <table class="table">
+            <tbody>
+                <% categories.forEach(function(category){ %>
+                    <tr>
+                        <td colspan="3" class="h4">
+                            <%= category.name %> <BR>
+                        </td>
+                    </tr>
+                    <% if (category.boats) { %>
+                    <% category.boats.forEach(function(boote){ %>
+                        <tr>
+                            <td class="h6">
+                                <%= boote.name %> <BR>
+                                <span class="h7"><%= boote.condition %></span>
+                            </td>
+                            <td class="h6">
+                                <%= boote.price %> &euro;
+                            </td>
+                            <td>
+                                <a class="badge badge-primary" href="/shoppingbasket/put/<%= boote.id %>">Reservieren</a>
+                            </td>
+                        </tr>
+                        <% }); %>
+                        <% } %>
+                    <% }); %>
+            </tbody>
+        </table>
+        <% if(req.session.basket && req.session.basket.length> 0){ %>
+            <a class="btn btn-primary" href="/reservation/step1">Reservierung abschliessen</a></li>
+        <% } %>
+    </div>
+</div>
