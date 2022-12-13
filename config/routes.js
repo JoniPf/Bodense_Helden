@@ -90,8 +90,7 @@ module.exports.routes = {
   'GET /reservation/step1': 'ReservationController.step1',
   'POST /reservation/step2': 'ReservationController.step2',
   'GET /reservation/commit': 'ReservationController.commit',
-  //'GET /reservation/confirmation/:id': 'ReservationController.confirmation',
-  'GET /reservation/confirmation': 'ReservationController.confirmation',
+  'GET /reservation/confirmation/:id': 'ReservationController.confirmation',
   'GET /reservation': 'ReservationController.find',
   
 

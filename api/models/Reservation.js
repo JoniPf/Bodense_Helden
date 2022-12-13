@@ -1,4 +1,4 @@
-// api/models/Order.js
+// api/models/Reservation.js
 module.exports = {
     attributes: {
         time: {
@@ -12,7 +12,15 @@ module.exports = {
         },
         boats: {
             collection: 'boat',
-            // via: 'reservations'
+            via: 'reservations'
         }
     }
   };
+
+  /*
+            date: {
+            type: 'number',  
+            columnType: 'DATE',  
+            required: true,
+        },
+        */

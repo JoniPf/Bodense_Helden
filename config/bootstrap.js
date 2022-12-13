@@ -72,7 +72,7 @@ module.exports.bootstrap = async function() {
   ]);
 
 await Boat.createEach([
-    { name: 'Grosser Adler', description: 'Schön grosses Segel', price: 56, condition:'Sehr gut', categoy: 'Segelboot' },
+    { name: 'Grosser Adler', description: 'Schön grosses Segel', price: 56, condition:'Sehr gut', category: 'Segelboot'},
   ]);
 
 

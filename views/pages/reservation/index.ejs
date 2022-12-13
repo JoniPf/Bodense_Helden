@@ -1,10 +1,10 @@
 <div class="container">
     <h1>Boote</h1>
 
-    <form action="/meal">
+    <form action="/boat">
         <label>Suche</label>
         <input type="text" value="" length="20" name="q">
-        <button class="green-button" type="submit">Suche</button>
+        <button class="blue-button" type="submit">Suche</button>
     </form>
 
     <div class="item-content">
@@ -15,16 +15,16 @@
                 <th>Bestellung</th>
             </thead>
             <tbody>
-                <% orders.forEach(function(order){ %>
+                <% reservations.forEach(function(reservation){ %>
                     <tr>
                         <td>
-                            <%= order.id %>
+                            <%= reservation.id %>
                         </td>
                         <td>
-                            <%= order.time %>
+                            <%= reservation.date %>
                         </td>
                         <td>
-                            <% order.boats.forEach(function(boat){ %>
+                            <% reservation.boats.forEach(function(boat){ %>
                                 <%= boat.name %><BR>
                             <% }); %>
 
