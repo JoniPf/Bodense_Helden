@@ -1,6 +1,11 @@
 // api/models/Reservation.js
 module.exports = {
     attributes: {
+        date: {
+            type: 'ref',  
+            columnType: 'DATE',  
+            required: true,
+        },
         time: {
             type: 'string',  
             columnType: 'TIME',  
@@ -16,11 +21,3 @@ module.exports = {
         }
     }
   };
-
-  /*
-            date: {
-            type: 'number',  
-            columnType: 'DATE',  
-            required: true,
-        },
-        */

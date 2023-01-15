@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>Ihre Stellplatzreservierungen</h1>
+
+    <div id="occupylist">
+        <form>
+            <label>Datum: </label>
+            <input class="form-control" v-model="datefrom" type="date" @change="find">
+            <input class="form-control" v-model="dateto" type="date" @change="find">
+        </form>
+        <div class="mt-4">
+            <h4>Reservationen zwischen {{ datefrom }} und {{ dateto }}</h4>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Datum</th>
+                        <th scope="col">Stellplatznummer(n)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="r in reservations">
+                        <td> {{ r.id }}</td>
+                        <td> {{ new Date(r.date).toLocaleDateString("de-DE") }}</td>
+                        <td> {{ r.places }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a class="btn btn-secondary mb-4" href="/welcome">Zurück zur Startseite</a>
+
+        </div>
+    </div>
+</div>

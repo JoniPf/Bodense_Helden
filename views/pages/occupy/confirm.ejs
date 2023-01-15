@@ -1,0 +1,19 @@
+<div class="container">
+    <h1>Bestätigung</h1>
+
+    <div>
+        <div class="h4">
+            Reservationsnummer: <%= occupy.id %>
+        </div>
+        <div class="h6">
+            Datum: <%= new Date(occupy.date).toLocaleDateString("de-DE")  %>
+        </div>
+        <div class="h6">
+            Platznummer(n):
+            <% occupy.reservationItems.forEach(function(item,index){ %>
+                <%= item.place %>
+            <% }) %>
+        </div>
+        <a class="btn btn-secondary mb-4" href="/welcome">Zurück zur Startseite</a>
+    </div>
+</div>

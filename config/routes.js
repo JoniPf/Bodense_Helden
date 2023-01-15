@@ -92,6 +92,16 @@ module.exports.routes = {
   'GET /reservation/commit': 'ReservationController.commit',
   'GET /reservation/confirmation/:id': 'ReservationController.confirmation',
   'GET /reservation': 'ReservationController.find',
+
+  'GET /occupy/:id': { action: 'occupy/show' },
+  'GET /occupy/new': { action: 'occupy/new' },
+  'GET /occupy': { action: 'occupy/index' },
   
+    // API
+    'GET /api/v1/occupy/find': { action: 'occupy/find' },
+    //  'GET /api/v1/occupy/find2': { action: 'occupy/find2' },
+      'GET /api/v1/occupy/find2': 'OccupyController.findAll',
+      'POST /api/v1/occupy/create': { action: 'occupy/create' }
+    
 
 };

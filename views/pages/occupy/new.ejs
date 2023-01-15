@@ -1,0 +1,29 @@
+<%- exposeLocalsToBrowser() %>
+
+    <div class="container" id="reservationapp">
+        <h1>Stellplatz Reservieren</h1>
+        <form>
+            <div class="form-group">
+                <div class="form-group">
+                    <label>Datum: </label>
+                    <input class="form-control" type="date" v-model="date" @input="find">
+                </div>
+            </div>
+            <div v-if="selectPlaces" class="form-group">
+                
+                <div class="mb-4">
+                    <lido-place v-for="placenumber in allPlaces" :occupied="blockedPlaces.has(''+placenumber)"
+                    :number="placenumber" @click="selectPlace(placenumber)" />
+                </div>
+                
+                <div class="mb-4 h4">Stellplatz: {{ place }} </div>
+                
+                <div class="row justify-content-between mb-4">
+                    <div class="col-sm-2" @click="reset"><span class="btn btn-primary">Zurücksetzen</a></div>
+                    <div class="col-sm-2" @click="reserve"><span class="btn btn-primary">Buchen</a></div>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
