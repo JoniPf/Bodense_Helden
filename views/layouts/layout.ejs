@@ -96,32 +96,36 @@
         <div class="row">
           <div class="col-6 col-md-3 align-self-top marginfooterelement">
               <h5>Kontakt</h3>
-              <p>Email</p>
-              <p>Instagram</p>
+                <li><a class="nav-link headera" href="/contact">Email</a></li>
+                <li><a class="nav-link headera" href="/faq">FAQ</a></li>
           </div>
           <div class="col-6 col-md-3 align-self-top marginfooterelement">
             <h5>Mein Account</h3>
-            <p>Anmelden</p>
-            <p>Registrieren</p>
-            <p>Reservierungen</p>
+              <li><a class="nav-link headera" href="/login">Anmelden</a></li>
+            <li><a class="nav-link headera" href="/signup">Registrieren</a></li>
+            <li><a class="nav-link headera" href="/reservation">Reservierungen</a></li>
           </div>
           <div class="col-6 col-md-3 align-self-top marginfooterelement">
             <h5>Shortcut</h3>
-            <p>Homepage</p>
-            <p>Öffnungszeiten</p>
-            <p>Impressum</p>
+              <li><a class="nav-link headera" href="/">Homepage</a></li>
+              <li><a class="nav-link headera" href="/openingHours">Öffnungszeiten</a></li>
+              <li><a class="nav-link headera" href="/legal/privacy">Privacy</a></li>
           </div>
           <div class="col-6 col-md-3 align-self-top marginfooterelement">
             <div  class="align-self-left">
               <h5>Reservierungen</h3>
-              <p>Stornieren</p>
-              <p>Übersicht</p>
+                <li><a class="nav-link headera" href="/reservation">Stornieren</a></li>
+                <li><a class="nav-link headera" href="/welcome">Übersicht</a></li>
             </div>
             
           </div>
         </div>
+        <% if(me) { %>
+          <small class="mr-4"><a href="/logout">Sign out</a></small>
+          <% } %>
+        <small purpose="footer-copy">Copyright &copy; <%= sails.config.custom.platformCopyrightYear %>
+          Jonas Pfundstein/Karina Kniazeva <br class="d-block d-sm-none"/>All rights reserved.</small>
       </div>
-
     </footer>
 
 
@@ -232,6 +236,7 @@
     <script src="/js/pages/homepage.page.js"></script>
     <script src="/js/pages/legal/privacy.page.js"></script>
     <script src="/js/pages/legal/terms.page.js"></script>
+    <script src="/js/pages/openingHours.page.js"></script>
     <script src="/js/showimage.js"></script>
     <!--SCRIPTS END-->
   </body>

@@ -15,7 +15,7 @@ parasails.registerPage("occupylist", {
             fetch(url)
                 .then(res => res.json())
                 .then(data => {
-                    this.occupy = data;
+                    this.reservations = data;
                     data.forEach((res) => {
                         console.log(res)
                     })

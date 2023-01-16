@@ -20,6 +20,7 @@ module.exports.policies = {
   'view-contact': true,
   'legal/view-terms': true,
   'legal/view-privacy': true,
+  'view-openingHours': true,
   'deliver-contact-form-message': true,
 
   BoatController: {
