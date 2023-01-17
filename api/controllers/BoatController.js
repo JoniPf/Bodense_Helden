@@ -17,7 +17,8 @@ module.exports = {
     sails.log.debug("Create boat....")
     let params = req.allParams();
     await Boat.create(params);
-    res.view('pages/boat/status', { boatname: req.param("name")})
+    res.redirect('/boat');
+    //res.view('pages/boat/status', { boatname: req.param("name")})
   },
 
   find: async function (req, res) {
@@ -45,7 +46,7 @@ module.exports = {
   destroy: async function (req, res) {
     sails.log.debug("delete single boat....")
     let boat = await Boat.destroyOne({ id: req.params.id });
-    res.redirect('/boat')
+    res.redirect('/boat');
   },
 
   edit: async function (req, res) {
