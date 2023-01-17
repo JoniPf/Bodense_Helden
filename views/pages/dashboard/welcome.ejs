@@ -28,51 +28,83 @@
         </div>
       </div>
       <% } else { %>
-          <div id="welcome">
-              <div class="container pt-5 pb-5">
-                  <h1>Wilkommen!</h1>
+        <% if(req.me.isCoworker) { %>
+            
+            <div class="container">
+                <h2 class="mt-4">Willkommen in der Administrationsoberfläche (Mitarbeiter)</h2>
+                
                   
-                  <hr />
-                  <div class="card w-100 mt-4">
-                      <h4 class="card-header">
-                          Boote
-                      </h4>
+             
+                <div class="card w-100 mt-4">
+                  <h4 class="card-header">
+                      Boote verwalten 
+                  </h4>
+      
+                  
+                  <div class="card-body text-center container">
+                      <div class="row mt-4">
+                          <div class="mb-4 col-sm">
+                              <a class="blue-button" href="/boat/">Boote anzeigen</a>
+                          </div>
+                          <div class="mb-4 col-sm">
+                              <a class="blue-button" href="/boat/new">Boote hinzufügen</a>
+                          </div>
+                          <div class="mb-4 col-sm">
+                              <a class="blue-button" href="/category">Kategorien bearbeiten</a>
+                          </div>
+                          
+                      </div>
                   </div>
-                  <div class="card w-100 mt-4">
-                      <h4 class="card-header">
-                          Bootsvermietung
-                      </h4>
-                      <div class="card-body container">
-                          <p>Mieten Sie ein Boot und verwalten Sie Ihre Reservationen.
-                          </p>
-                          <div class="row mt-4">
-                              <div class="mb-4 col-sm">
-                                  <a class="blue-button" href="/reservation/boote">Boot reservieren</a>
-                              </div>
-                              <div class="mb-4 col-sm">
-                                  <a class="blue-button" href="/reservation">Reservationen verwalten</a>
+              </div>
+            </div>
+            <% } else { %>
+                <div id="welcome">
+                    <div class="container pt-5 pb-5">
+                        <h1>Wilkommen!</h1>
+                        
+                        <hr />
+                        <div class="card w-100 mt-4">
+                            <h4 class="card-header">
+                                Boote
+                            </h4>
+                        </div>
+                        <div class="card w-100 mt-4">
+                            <h4 class="card-header">
+                                Bootsvermietung
+                            </h4>
+                            <div class="card-body container">
+                                <p>Mieten Sie ein Boot und verwalten Sie Ihre Reservationen.
+                                </p>
+                                <div class="row mt-4">
+                                    <div class="mb-4 col-sm">
+                                        <a class="blue-button" href="/reservation/boote">Boot reservieren</a>
+                                    </div>
+                                    <div class="mb-4 col-sm">
+                                        <a class="blue-button" href="/reservation">Reservationen verwalten</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card w-100 mt-4">
+                          <h4 class="card-header">
+                              Stellplatzreservation
+                          </h4>
+                          <div class="card-body container">
+                              <p>Reservieren Sie Stellplatz an unserem Hafen und verwalten Sie Ihre Reservationen.
+                              </p>
+                              <div class="row mt-4">
+                                  <div class="mb-4 col-sm">
+                                      <a class="blue-button" href="/occupy/new">Stellplatz reservieren</a>
+                                  </div>
+                                  <div class="mb-4 col-sm">
+                                      <a class="blue-button" href="/occupy">Reservierung verwalten</a>
+                                  </div>
                               </div>
                           </div>
                       </div>
-                  </div>
-                  <div class="card w-100 mt-4">
-                    <h4 class="card-header">
-                        Stellplatzreservation
-                    </h4>
-                    <div class="card-body container">
-                        <p>Reservieren Sie Stellplatz an unserem Hafen und verwalten Sie Ihre Reservationen.
-                        </p>
-                        <div class="row mt-4">
-                            <div class="mb-4 col-sm">
-                                <a class="blue-button" href="/occupy/new">Stellplatz reservieren</a>
-                            </div>
-                            <div class="mb-4 col-sm">
-                                <a class="blue-button" href="/occupy">Reservierung verwalten</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
-              </div>
-          </div>
+                <% } %>
+          
           <% } %>
               <% } %>
