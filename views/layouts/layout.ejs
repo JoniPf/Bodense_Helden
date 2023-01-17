@@ -56,18 +56,18 @@
       
         <div class="navbar-collapse collapse dual-nav order-1 order-md-0">
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link headera" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link headera" href="/boote">Boote</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link headera" href="/login">Log in</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link headera" href="/contact">Kontakt</a>
-            </li>
+            <a class="nav-link headera" href="/"><li class="nav-item">Home</li></a>
+            
+            <% if(me) { %><a class="nav-link headera" href="/boote"><li class="nav-item">Boote</li></a><% } %>
+            
+            
+              
+            
+            
+              <a class="nav-link headera" href="/contact"><li class="nav-item">Kontakt</li></a>
+              
+            
+            
           </ul>
         </div>
     
@@ -80,10 +80,13 @@
             </li> 
           </ul>
           <ul class="navbar-nav ">
-            <li class="nav-item">
-                         
-              <button class="btn"><i class="fa fa-home"></i></button>
+            <% if(!me) { %><a class="nav-link headera" href="/login"><li class="nav-item">Anmelden</li></a><% } %>
+            <% if(me) { %><a class="nav-link headera" href="/logout"><li class="nav-item">
+              
+                Abmelden
+                
             </li>
+          </a><% } %>
           </ul>
         </div>
       
@@ -93,38 +96,52 @@
     
     <footer class="mt-auto" >
       <div class="jumbotron footer ">
-        <div class="row">
+        <div class="row justify-content-center">
           <div class="col-6 col-md-3 align-self-top marginfooterelement">
-              <h5>Kontakt</h3>
-                <li><a class="nav-link headera" href="/contact">Email</a></li>
+            <ul class="navbar-nav footertxtcenter">
+              <h3>Kontakt</h3>
+                <a class="nav-link headera" href="/contact"><li>Email</li></a>
+              </ul>
           </div>
           <div class="col-6 col-md-3 align-self-top marginfooterelement">
-            <h5>Mein Account</h3>
-              <li><a class="nav-link headera" href="/login">Anmelden</a></li>
-            <li><a class="nav-link headera" href="/signup">Registrieren</a></li>
-            <li><a class="nav-link headera" href="/reservation">Reservierungen</a></li>
+            <ul class="navbar-nav footertxtcenter">
+              <h3>Mein Account</h3>
+              <% if(!me) { %><a class="nav-link headera" href="/login"><li>Anmelden</li></a><% } %>
+            <a class="nav-link headera" href="/signup"><li>Registrieren</li></a>
+            <% if(me) { %><a class="nav-link headera" href="/reservation"><li>Reservierungen</li></a><% } %>
+              <% if(me) { %><a class="nav-link headera" href="/logout"><li class="nav-item">
+                
+                  Abmelden
+                  
+              </li>
+            </a><% } %>
+          </ul>
           </div>
           <div class="col-6 col-md-3 align-self-top marginfooterelement">
-            <h5>Shortcut</h3>
-              <li><a class="nav-link headera" href="/">Homepage</a></li>
-              <li><a class="nav-link headera" href="/faq">Öffnungszeiten</a></li>
-              <li><a class="nav-link headera" href="/legal/privacy">Privacy</a></li>
+            <ul class="navbar-nav footertxtcenter">
+              <h3>Shortcut</h3>
+              <a class="nav-link headera" href="/"><li>Homepage</li></a>
+              <a class="nav-link headera" href="/faq"><li>Öffnungszeiten</li></a>
+              <a class="nav-link headera" href="/legal/privacy"><li>Privacy</li></a>
+              </ul>
           </div>
+          <% if(me) { %>
           <div class="col-6 col-md-3 align-self-top marginfooterelement">
             <div  class="align-self-left">
-              <h5>Reservierungen</h3>
-                <li><a class="nav-link headera" href="/reservation">Stornieren</a></li>
-                <li><a class="nav-link headera" href="/welcome">Übersicht</a></li>
+              <ul class="navbar-nav footertxtcenter">
+                <h3>Reservierungen</h3>
+                <a class="nav-link headera" href="/reservation"><li>Stornieren</li></a>
+                <a class="nav-link headera" href="/welcome"><li>Übersicht</li></a>
+                </ul>
             </div>
+            <% } %>
             
           </div>
         </div>
-        <% if(me) { %>
-          <small class="mr-4"><a href="/logout">Sign out</a></small>
-          <% } %>
+        
+      </div>
         <small purpose="footer-copy">Copyright &copy; <%= sails.config.custom.platformCopyrightYear %>
           Jonas Pfundstein/Karina Kniazeva <br class="d-block d-sm-none"/>All rights reserved.</small>
-      </div>
     </footer>
 
 

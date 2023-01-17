@@ -62,6 +62,9 @@ a:link {
     background-color:#1d90a7; 
     color: #fbf9f2;
   }
+  .footertxtcenter{
+    text-align:center;
+  }
 
   /*colomns*/
   .leercolomn{
