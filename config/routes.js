@@ -80,6 +80,10 @@ module.exports.routes = {
   'GET /boat/:id/edit': 'boat.edit',
   'POST /boat/:id/update': 'boat.update',
 
+  'GET /boat/newDialog': { controller: 'BoatController', action:'createWithImageStep0' },
+  'POST /boat/newAddImage': { controller: 'BoatController', action:'createWithImageStep1' },
+  'POST /boatWithImage': { controller: 'BoatController', action:'createWithImageStep2' },
+
   'GET /category/new': { controller: 'CategoryController', action:'new' },
   'POST /category': { controller: 'CategoryController', action:'create' },
   'GET /category/:id/destroy': { controller: 'CategoryController', action: 'destroyOne' },

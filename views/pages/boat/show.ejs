@@ -36,6 +36,14 @@
                     <%= boat.condition %>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-2">
+                    Details
+                </div> 
+                <div class="col-10">
+                    <%= boat.details %>
+                </div>
+            </div>
                 <div class="row">
                     <div class="col-2">
                         Kategorie
@@ -44,7 +52,21 @@
                         <%= boat.category.name %>
                     </div>
                 </div>
+                <% if(boat.image) { %>
+                    <div class="row">
+                        <div class="col-2">
+                            Bild
+                        </div>
+                        <div class="col-10">
+                            <img class="w-100 p-2" src="/images/boats/<%= boat.image %>">
+                        </div>
+                    </div>
+                <% } %>
         </div>
     </div>
+    <% if(req.me.isSuperAdmin) { %>
     <a class="blue-button mt-4" href="/boat">Zurück</a>
+    <% } else { %>
+        <a class="blue-button mt-4" href="/welcome">Zurück</a>
+        <% } %>
 </div>
