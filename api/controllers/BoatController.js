@@ -40,7 +40,7 @@ module.exports = {
   findOne: async function (req, res) {
     sails.log.debug("List single boat....")
     let boat = await Boat.findOne({ id: req.params.id });
-    res.view ('pages/boat/show', { boat: boat } );
+    res.view ('pages/boat/show', { boat: boat });
   },
 
   destroy: async function (req, res) {
@@ -76,14 +76,16 @@ createWithImageStep1: async function (req, res) {
   req.session.name = req.body.name;
   req.session.price = req.body.price;
   req.session.description = req.body.description;
+  req.session.condition = req.body.condition;
+  req.session.details = req.body.details;
   req.session.category = req.body.category;
-  res.view('pages/boat/newWithImageForm2', { boatname: req.param("name") })
+  res.view('pages/boat/newWithImageForm2')
 },
 
 /**
- * Uploads an image for a meal.
- * The image is stored in the /assets/images/meals directory and the path to the image 
- * in the database table of meals. 
+ * Uploads an image for a boat.
+ * The image is stored in the /assets/images/boats directory and the path to the image 
+ * in the database table of boats. 
  */
 createWithImageStep2: async function (req, res) {
   sails.log("Upload image for boat...")
@@ -103,10 +105,11 @@ createWithImageStep2: async function (req, res) {
     await Boat.create({
       "image": fname,
       "name": req.session.name,
-      "description": req.session.description,
       "price": req.session.price,
+      "description": req.session.description,
+      "condition":req.session.condition,
       "details": req.session.details,
-      "category": req.session.category,
+      "category": req.session.category
     })
   };
 

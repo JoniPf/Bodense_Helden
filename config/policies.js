@@ -27,6 +27,7 @@ module.exports.policies = {
     '*': 'is-super-admin',
   },
   */
+  
   CategoryController: {
     '*': 'is-super-admin',
   }

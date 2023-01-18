@@ -1,12 +1,19 @@
 <div class="container">
     <div class="card w-100 mt-4">
-        <h4 class="card-header">
+        <h4 class="card-header"> 
             Boot Eintrag anzeigen
         </h4>
-        <div>
+        <div style="margin-left: 5%; margin-right: 5%;">
+            <% if(boat.image) { %>
+            <div class="row">
+                <div class="col-12">
+                    <img class="w-100 p-2" src="/images/boats/<%= boat.image %>">
+                </div>
+            </div>
+        <% } %>
             <div class="row">
                 <div class="col-2">
-                    Name
+                    Name:
                 </div> 
                 <div class="col-10">
                     <%= boat.name %>
@@ -14,7 +21,7 @@
             </div>
             <div class="row">
                 <div class="col-2">
-                    Preis
+                    Preis:
                 </div> 
                 <div class="col-10">
                     <%= boat.price %>
@@ -22,7 +29,7 @@
             </div>
             <div class="row">
                 <div class="col-2">
-                    Beschreibung
+                    Beschreibung:
                 </div> 
                 <div class="col-10">
                     <%= boat.description %>
@@ -30,7 +37,7 @@
             </div>
             <div class="row">
                 <div class="col-2">
-                    Zustand
+                    Zustand:
                 </div> 
                 <div class="col-10">
                     <%= boat.condition %>
@@ -38,35 +45,29 @@
             </div>
             <div class="row">
                 <div class="col-2">
-                    Details
+                    Details:
                 </div> 
                 <div class="col-10">
                     <%= boat.details %>
                 </div>
             </div>
+            <% if(boat.category) { %>
                 <div class="row">
                     <div class="col-2">
-                        Kategorie
+                        Kategorie:
                     </div>
                     <div class="col-10">
-                        <%= boat.category.name %>
+                        <%= boat.category.name %> 
                     </div>
                 </div>
-                <% if(boat.image) { %>
-                    <div class="row">
-                        <div class="col-2">
-                            Bild
-                        </div>
-                        <div class="col-10">
-                            <img class="w-100 p-2" src="/images/boats/<%= boat.image %>">
-                        </div>
-                    </div>
-                <% } %>
+            <% } %>
         </div>
     </div>
+    <div style="margin-top: 5%;">
     <% if(req.me.isSuperAdmin) { %>
     <a class="blue-button mt-4" href="/boat">Zurück</a>
     <% } else { %>
         <a class="blue-button mt-4" href="/welcome">Zurück</a>
         <% } %>
+    </div>
 </div>

@@ -59,7 +59,7 @@
             <a class="nav-link headera" href="/"><li class="nav-item">Home</li></a>
             
             
-            <% if(me) { %><a class="nav-link headera" href="/boote"><li class="nav-item">Boote</li></a><% } %>
+            <% if(req.me) { %><a class="nav-link headera" href="/boote"><li class="nav-item">Boote</li></a><% } %>
             
 
               <a class="nav-link headera" href="/contact"><li class="nav-item">Kontakt</li></a>
@@ -78,8 +78,8 @@
             </li> 
           </ul>
           <ul class="navbar-nav ">
-            <% if(!me) { %><a class="nav-link headera" href="/login"><li class="nav-item">Anmelden</li></a><% } %>
-            <% if(me) { %><a class="nav-link headera" href="/logout"><li class="nav-item">
+            <% if(!req.me) { %><a class="nav-link headera" href="/login"><li class="nav-item">Anmelden</li></a><% } %>
+            <% if(req.me) { %><a class="nav-link headera" href="/logout"><li class="nav-item">
               
                 Abmelden
                 
@@ -104,10 +104,10 @@
           <div class="col-6 col-md-3 align-self-top marginfooterelement">
             <ul class="navbar-nav footertxtcenter">
               <h3>Mein Account</h3>
-              <% if(!me) { %><a class="nav-link headera" href="/login"><li>Anmelden</li></a><% } %>
+              <% if(!req.me) { %><a class="nav-link headera" href="/login"><li>Anmelden</li></a><% } %>
             <a class="nav-link headera" href="/signup"><li>Registrieren</li></a>
-            <% if(me) { %><a class="nav-link headera" href="/reservation"><li>Reservierungen</li></a><% } %>
-              <% if(me) { %><a class="nav-link headera" href="/logout"><li class="nav-item">
+            <% if(req.me) { %><a class="nav-link headera" href="/reservation"><li>Reservierungen</li></a><% } %>
+              <% if(req.me) { %><a class="nav-link headera" href="/logout"><li class="nav-item">
                 
                   Abmelden
                   
@@ -123,7 +123,7 @@
               <a class="nav-link headera" href="/legal/privacy"><li>Privacy</li></a>
               </ul>
           </div>
-          <% if(me) { %>
+          <% if(req.me) { %>
           <div class="col-6 col-md-3 align-self-top marginfooterelement">
             <div  class="align-self-left">
               <ul class="navbar-nav footertxtcenter">
