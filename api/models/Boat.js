@@ -13,7 +13,6 @@ module.exports = {
         },
         reservations: {
             model: 'reservation',
-            via: 'boats'
         }
     },
   };

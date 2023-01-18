@@ -21,7 +21,7 @@ module.exports = {
 
     step2: async function (req, res) {
         let reservationValues = {};
-        reservationValues.address = req.body.ort; 
+        reservationValues.date = req.body.datum; 
         reservationValues.time = req.body.zeit;
         req.session.reservation = reservationValues;
         res.view('pages/reservation/step2', {"reservation": req.session.reservation, "basket": req.session.basket});

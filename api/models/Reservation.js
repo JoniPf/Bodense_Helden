@@ -4,7 +4,7 @@ module.exports = {
         date: {
             type: 'ref',  
             columnType: 'DATE',  
-            required: true,
+           // required: true,
         },
         time: {
             type: 'string',  
