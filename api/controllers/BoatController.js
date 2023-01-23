@@ -18,7 +18,6 @@ module.exports = {
     let params = req.allParams();
     await Boat.create(params);
     res.redirect('/boat');
-    //res.view('pages/boat/status', { boatname: req.param("name")})
   },
 
   find: async function (req, res) {
@@ -39,7 +38,7 @@ module.exports = {
 
   findOne: async function (req, res) {
     sails.log.debug("List single boat....")
-    let boat = await Boat.findOne({ id: req.params.id });
+    let boat = await Boat.findOne({ id: req.params.id }).populate("category");
     res.view ('pages/boat/show', { boat: boat });
   },
 
@@ -61,16 +60,12 @@ module.exports = {
     res.redirect('/boat');
   },
   
- /////////////// Example for session and image handling ////////////////
 
  createWithImageStep0: async function (req, res) {
   let categories = await Category.find();
   res.view('pages/boat/newWithImageForm1', { categories });
 },
 
-/**
- * Store values of form in the session
- */
 createWithImageStep1: async function (req, res) {
   sails.log.debug("Create boat....")
   req.session.name = req.body.name;
@@ -82,15 +77,8 @@ createWithImageStep1: async function (req, res) {
   res.view('pages/boat/newWithImageForm2')
 },
 
-/**
- * Uploads an image for a boat.
- * The image is stored in the /assets/images/boats directory and the path to the image 
- * in the database table of boats. 
- */
 createWithImageStep2: async function (req, res) {
   sails.log("Upload image for boat...")
-  // Define the parameters of the upload as an object
-  // In this example only the path, wehre to upload the image, is set
   let params = {
     dirname: require('path').resolve(sails.config.appPath, 'assets/images/boats/')
   };
@@ -113,9 +101,6 @@ createWithImageStep2: async function (req, res) {
     })
   };
 
-    // This funvtion is called, once all files are uploaded
-    // err indicates if the upload process triggered an error and has been aborted 
-    // uploaded files contains an array of the files which have been uploaded, in our case only one.
     await req.file('image').upload(params, callback);
     return res.redirect('/boat');
   },

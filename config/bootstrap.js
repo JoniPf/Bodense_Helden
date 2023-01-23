@@ -73,6 +73,11 @@ module.exports.bootstrap = async function() {
   ]);
 
 
+  await Boat.createEach([
+    {name: 'Invictus — 200FX', description:'Das Boot Überzeugt mit seinem schönen aussehen und senen grossen Motorboot', price: '59', condition:'sehr gut',details:'6 Personen - 100PS - 6.1 Meter', image: '220d466a-5e37-4cb8-a552-6cbaa3f786be.jpg', category: 'Motorboot'},
+  ]);
+
+
   // Save new bootstrap version
   await sails.helpers.fs.writeJson.with({
     destination: bootstrapLastRunInfoPath,
