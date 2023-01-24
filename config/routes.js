@@ -74,8 +74,10 @@ module.exports.routes = {
 
   'GET /boat/new': { controller: 'BoatController', action:'new' },
   'POST /boat': { controller: 'BoatController', action:'create' },
-  'GET /boat': 'BoatController.find',
-  'GET /boat/:id': 'boat.findOne',
+  'GET /boat': { controller: 'BoatController', action:'find' },
+  'GET /boat/:id': { controller: 'BoatController', action:'findOne' },
+
+  'GET /showboat/:id': { controller: 'ShowController', action:'findOne' },
   
   'GET /boat/:id/delete': 'boat.destroy',
   'GET /boat/:id/edit': 'boat.edit',
