@@ -1,8 +1,6 @@
 <div class="container">
-    <div class="card w-100 mt-4">
-        <h4 class="card-header"> 
-            Boot Eintrag anzeigen
-        </h4>
+   
+      
         <div style="margin-left: 5%; margin-right: 5%;">
             <% if(boat.image) { %>
             <div class="row">
@@ -62,8 +60,8 @@
                 </div>
             <% } %>
         </div>
-    </div>
-    <div style="margin-top: 5%;">
+   
+    <div style="margin-top: 5%; margin-left: 5%;">
     <% if(req.me.isSuperAdmin) { %>
     <a class="blue-button mt-4" href="/boat">Zurück</a>
     <% } else { %>

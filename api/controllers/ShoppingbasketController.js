@@ -22,7 +22,6 @@ module.exports = {
         } else {
             req.session.basket.push(boat);
         }
-        // All done.
         res.redirect('/shoppingbasket');
     },
 
