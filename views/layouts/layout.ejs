@@ -73,11 +73,7 @@
         <img src="images/logo.png" alt="Bodensee">
        
         <div class="navbar-collapse collapse dual-nav order-4 order-md-4 justify-content-end">
-          <ul class="navbar-nav ">
-            <li class="nav-item">
-              <input type="text" placeholder="Search..">
-            </li> 
-          </ul>
+          
           <ul class="navbar-nav ">
             <% if(!req.me) { %><a class="nav-link headera" href="/login"><li class="nav-item">Anmelden</li></a><% } %>
             <% if(req.me) { %><a class="nav-link headera" href="/logout"><li class="nav-item">
