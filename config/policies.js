@@ -19,6 +19,7 @@ module.exports.policies = {
   'view-oeffnungszeiten': true,
   'view-contact': true,
   'view-impressum': true,
+  'view-wir': true,
   'legal/view-terms': true,
   'legal/view-privacy': true,
   'deliver-contact-form-message': true,

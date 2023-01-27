@@ -32,6 +32,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <!-- Add icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Add icon library -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     
     <link rel="stylesheet" href="/styles/css.css">
     <link rel="stylesheet" href="/styles/importer.css">
@@ -63,7 +68,7 @@
             
 
               <a class="nav-link headera" href="/contact"><li class="nav-item">Kontakt</li></a>
-              <a class="nav-link headera" href="/faq"><li>Öffnungszeiten</li></a>
+              <a class="nav-link headera" href="/wir"><li>Über uns</li></a>
               
             
             
@@ -75,7 +80,8 @@
         <div class="navbar-collapse collapse dual-nav order-4 order-md-4 justify-content-end">
           
           <ul class="navbar-nav ">
-            <% if(!req.me) { %><a class="nav-link headera" href="/login"><li class="nav-item">Anmelden</li></a><% } %>
+            <% if(!req.me) { %><a class="nav-link headera" href="/signup"><li class="nav-item">Sign up</li></a>
+            <a class="nav-link headera" href="/login"><li class="nav-item">Anmelden</li></a><% } %>
             <% if(req.me) { %><a class="nav-link headera" href="/logout"><li class="nav-item">
               
                 Abmelden
@@ -103,7 +109,7 @@
           <div class="col-6 col-md-3 align-self-top marginfooterelement">
             <ul class="navbar-nav footertxtcenter">
               <h3>Mein Account</h3>
-              <% if(!req.me) { %><a class="nav-link headera" href="/login"><li>Anmelden</li></a><% } %>
+               <% if(!req.me) { %><a class="nav-link headera" href="/login"><li>Anmelden</li></a><% } %>
             <a class="nav-link headera" href="/signup"><li>Registrieren</li></a>
             <% if(req.me) { %><a class="nav-link headera" href="/reservation"><li>Reservierungen</li></a><% } %>
               <% if(req.me) { %><a class="nav-link headera" href="/logout"><li class="nav-item">
@@ -253,6 +259,7 @@
     <script src="/js/pages/legal/privacy.page.js"></script>
     <script src="/js/pages/legal/terms.page.js"></script>
     <script src="/js/pages/oeffnungszeiten.js"></script>
+    <script src="/js/pages/ueberUns.js"></script>
     <script src="/js/showimage.js"></script>
     <!--SCRIPTS END-->
   </body>

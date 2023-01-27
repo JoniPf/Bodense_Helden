@@ -21,6 +21,7 @@ module.exports.routes = {
   'GET /contact':            { action:   'view-contact' },
   'GET /impressum':          { action:   'view-impressum' },
   'GET /oeffnungszeiten':    { action:   'view-oeffnungszeiten' },
+  'GET /wir':                { action:   'view-wir' },
 
 
 

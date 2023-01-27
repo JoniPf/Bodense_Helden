@@ -80,7 +80,7 @@ createWithImageStep1: async function (req, res) {
 createWithImageStep2: async function (req, res) {
   sails.log("Upload image for boat...")
   let params = {
-    dirname: require('path').resolve(sails.config.appPath, 'assets/images/boats/')
+    dirname: require('path').resolve(sails.config.appPath, '.tmp/public/images/boats/')
   };
 
   let callback = async function (err, uploadedFiles) {
