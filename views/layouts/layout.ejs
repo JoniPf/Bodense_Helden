@@ -101,18 +101,18 @@
           <div class="col-6 col-md-3 align-self-top marginfooterelement">
             <ul class="navbar-nav footertxtcenter">
               <h3>Kontakt</h3>
-                <a class="nav-link headera" href="/contact" aria-label="Email"><li>Email</li></a>
-                <a class="nav-link headera" href="/impressum" aria-label="Impressum"><li>Impressum</li></a>
-                <a class="nav-link headera" href="/legal/terms" aria-label="Terms"><li>Terms</li></a>
+                <a class="nav-link headera" href="/contact" ><li>Email</li></a>
+                <a class="nav-link headera" href="/impressum" ><li>Impressum</li></a>
+                <a class="nav-link headera" href="/legal/terms" ><li>Terms</li></a>
               </ul>
           </div>
           <div class="col-6 col-md-3 align-self-top marginfooterelement">
             <ul class="navbar-nav footertxtcenter">
               <h3>Mein Account</h3>
-               <% if(!req.me) { %><a class="nav-link headera" href="/login" aria-label="Anmelden"><li>Anmelden</li></a><% } %>
-            <a class="nav-link headera" href="/signup" aria-label="Regestrieren"><li>Registrieren</li></a>
-            <% if(req.me) { %><a class="nav-link headera" href="/reservation" aria-label="Reservierungen"><li>Reservierungen</li></a><% } %>
-              <% if(req.me) { %><a class="nav-link headera" href="/logout" aria-label="Ausloggen"><li class="nav-item">
+               <% if(!req.me) { %><a class="nav-link headera" href="/login" ><li>Anmelden</li></a><% } %>
+            <a class="nav-link headera" href="/signup" ><li>Registrieren</li></a>
+            <% if(req.me) { %><a class="nav-link headera" href="/reservation" ><li>Reservierungen</li></a><% } %>
+              <% if(req.me) { %><a class="nav-link headera" href="/logout" ><li class="nav-item">
                 
                   Abmelden
                   
@@ -123,9 +123,9 @@
           <div class="col-6 col-md-3 align-self-top marginfooterelement">
             <ul class="navbar-nav footertxtcenter">
               <h3>Shortcut</h3>
-              <a class="nav-link headera" href="/" aria-label="Homepage"><li>Homepage</li></a>
-              <a class="nav-link headera" href="/oeffnungszeiten" aria-label="Öffnungszeiten"><li>Öffnungszeiten</li></a>
-              <a class="nav-link headera" href="/legal/privacy" aria-label="Privacy"><li>Privacy</li></a>
+              <a class="nav-link headera" href="/" ><li>Homepage</li></a>
+              <a class="nav-link headera" href="/oeffnungszeiten" ><li>Öffnungszeiten</li></a>
+              <a class="nav-link headera" href="/legal/privacy" ><li>Privacy</li></a>
               </ul>
           </div>
           <% if(req.me) { %>
@@ -133,8 +133,8 @@
             <div  class="align-self-left">
               <ul class="navbar-nav footertxtcenter">
                 <h3>Reservierungen</h3>
-                <a class="nav-link headera" href="/reservation" aria-label="Stornieren"><li>Stornieren</li></a>
-                <a class="nav-link headera" href="/welcome" aria-label="Übersicht"><li>Übersicht</li></a>
+                <a class="nav-link headera" href="/reservation" ><li>Stornieren</li></a>
+                <a class="nav-link headera" href="/welcome" ><li>Übersicht</li></a>
                 </ul>
             </div>
             <% } %>
