@@ -21,10 +21,10 @@
                                 <%= boote.price %> &euro;
                             </td>
                             <td>
-                                <a class="badge badge-primary" href="/shoppingbasket/put/<%= boote.id %>">Reservieren</a>
+                                <a class="badge badge-primary" href="/shoppingbasket/put/<%= boote.id %>" aria-label="Reservieren">Reservieren</a>
                             </td>
                             <td>
-                                <a class="badge badge-primary" href="/showboat/<%= boote.id %>">Details</a>
+                                <a class="badge badge-primary" href="/showboat/<%= boote.id %>" aria-label="Details">Details</a>
                             </td>
                         </tr>
                         <% }); %>
@@ -33,8 +33,8 @@
             </tbody>
         </table>
         <% if(req.session.basket && req.session.basket.length> 0){ %>
-            <a class="btn btn-primary" href="/reservation/step1">Reservierung abschliessen</a></li>
+            <a class="btn btn-primary" aria-label="Reservierung beenden" href="/reservation/step1" aria-label="Reservierung abschließen">Reservierung abschliessen</a></li>
         <% } %>
     </div>
-    <a class="blue-button mt-4" href="/welcome">Zurück</a>
+    <a class="blue-button mt-4" aria-label="Zurck" href="/welcome" aria-label="Zurück">Zurück</a>
 </div>
